@@ -4460,13 +4460,6 @@ int RM_SetUserACL(RedisModuleUser *user, const char* acl) {
     return ACLSetUser(user->user, acl, -1);
 }
 
-/* Sets the user permission of a user created through the redis module 
- * interface. The syntax is the sam as ACL SETUSER, so refer to the 
- * documentation in acl.c for more information. */
-int RM_SetUserACL(RedisModuleUser *user, const char* acl) {
-    return ACLSetUser(user->user, acl, -1);
-}
-
 /* Authorize an authentication context with the given user. An 
  * authentication is mapped to an underlying client. This method
  * must currently be called within the auth callback but will
