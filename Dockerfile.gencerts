@@ -1,0 +1,8 @@
+FROM ubuntu:bionic AS builder
+RUN apt-get update && apt-get install -y openssl
+
+WORKDIR /workdir
+RUN mkdir -p ssl
+ADD gencerts.sh /gencerts.sh
+
+CMD ["/gencerts.sh"]

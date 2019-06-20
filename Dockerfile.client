@@ -1,0 +1,7 @@
+FROM python:3.7.3-alpine
+
+RUN pip install redis
+
+ADD client.py /client.py
+
+CMD ["/client.py"]
